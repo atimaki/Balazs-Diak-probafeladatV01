@@ -1,0 +1,157 @@
+body{
+    width: 100%;
+    padding-top: 56.25%; 
+    background-image: url("image/background.png");
+    background-size: cover;
+    margin:0px;
+    padding: 0px;
+    justify-content: center;
+}
+
+.fruit-containers{
+    display: grid;
+    grid-template-columns:repeat(3, auto);
+    height: 66.66vh;
+    margin-top: 50px;
+    justify-content: center;
+    align-content: center;
+    grid-column-gap: 100px;
+    position: relative;
+}
+
+.basket{
+    height: 387px;
+    width: 523px;    
+    background-image: url("image/screen.png");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.pool{
+    background-image: url("image/pool.png");
+    background-size: cover;
+    height: 33.33vh;
+    display: grid;
+    grid-template-columns:repeat(6, auto);
+    justify-content: center;
+    align-content: center;
+    gap: 120px;
+}
+
+.fruitCell{
+    width: 210px;
+    height: 210px;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    object-fit:contain;
+    width: 200px;
+    height: 200px;
+}
+
+#movedFruitImg{
+    width: min-content;
+    height: min-content;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.clickedFruit{
+    border: 5px dashed #0f0;
+}
+
+.fruitGroup.grayFruit{
+    animation: grayScaleFruit 2s ease-in forwards;
+}
+
+.fruitToMove{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    transition: top 1.5s ease-in-out,
+    left 1.5s ease-in-out;
+}
+
+.isHidden{
+    display: none;
+    transform: scale(0);
+}
+
+.fruitToMove.popOut{
+    animation: 
+    popOutFruit 0.25s ease-in-out forwards,
+    putInFruit 0.25s ease-in-out 1.75s forwards;
+}
+
+.fruitToMove.putIn{
+    animation: putInFruit 0.25s ease-in-out forwards;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, .5);
+    position:fixed;
+    width:100%;
+    padding-top: 56.25%;
+    top: 0;
+    left: 0;
+    animation: win 2s ease-in-out forwards,
+    win 1s ease-in-out 2.5s reverse forwards;
+}
+.star{
+    position: absolute;
+    width: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+}
+
+@keyframes win {
+    from{opacity: 0%;}
+    to{opacity:100%}
+}
+
+@keyframes grayScaleFruit {
+    from {filter: grayScale(0%);
+    opacity: 100%;}
+    to {filter: grayScale(100%);
+    opacity: 20%;}
+}
+
+@keyframes popOutFruit{
+    0%{
+        opacity: 0%;
+        transform: scale(0);
+    }
+    80%{
+        opacity: 80%;
+        transform: scale(1.3);
+    }
+    100%{
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes putInFruit{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(0.7);
+    }
+    80%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

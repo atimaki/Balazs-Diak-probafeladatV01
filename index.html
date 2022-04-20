@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hajtun Attila">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fruit Game</title>
+</head>
+
+<body>
+    <div class="fruit-containers">
+        <div class="basket" basket-index="0"></div>
+        <div class="basket" basket-index="1"></div>
+        <div class="basket" basket-index="2"></div>
+    </div>
+    <div class="pool">
+        <div class="fruitCell">
+            <img src="image/apple_group.png" fruit-index="0" class="fruitGroup pointer">
+            
+            <img src="image/apple_1.png" fruit-index="0" class="fruitToMove">
+        </div>
+        <div class="fruitCell">
+            <img src="image/banana_group.png" fruit-index="1" class="fruitGroup pointer">
+
+            <img src="image/banana_1.png" fruit-index="1" class="fruitToMove">
+        </div>
+        <div class="fruitCell">
+            <img src="image/cherry_group.png" fruit-index="2" class="fruitGroup pointer">
+
+            <img src="image/cherry_1.png" fruit-index="2" class="fruitToMove">
+        </div>
+        <div class="fruitCell">
+            <img src="image/lemon_group.png" fruit-index="3" class="fruitGroup pointer">
+            
+            <img src="image/lemon_1.png" fruit-index="3" class="fruitToMove">
+        </div>
+        <div class="fruitCell">
+            <img src="image/melon_group.png" fruit-index="4" class="fruitGroup pointer">
+
+            <img src="image/melon_1.png" fruit-index="4" class="fruitToMove">
+        </div>
+        <div class="fruitCell">
+            <img src="image/orange_group.png" fruit-index="5" class="fruitGroup pointer">
+            
+            <img src="image/orange_1.png" fruit-index="5" class="fruitToMove">
+        </div>
+    </div>
+    <div>
+        <audio id="error">   
+            <source src="audio/Error Sound 21.wav"/>   
+        </audio>   
+        <audio id="popOut">   
+            <source src="audio/Popout Sound 02.mp3"/>   
+        </audio>
+        <audio id="putDown">   
+            <source src="audio/Special Click Sound 07.wav"/>   
+        </audio>
+        <audio id="select">   
+            <source src="audio/Click Sound 10.wav"/>   
+        </audio>
+        <audio id="slide">   
+            <source src="audio/Slide Up Sound 01.wav"/>   
+        </audio>   
+        <audio id="win">   
+            <source src="audio/Win Sound 02.wav"/>   
+        </audio>   
+    </div>
+    <div class="overlay isHidden"><img src="image/star.svg" class="star"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
